@@ -15,10 +15,10 @@ To use as a maven repository :
         
 Usage :   
    
-    BLEConstants.getUUID(BLEService.Generic_Access));
+    UUID uuid = BLEConstants.getUUID(BLEService.Generic_Access));
    
 and: 
    
-    BLEConstamts.getName((UUID) ....)
+    String name = BLEConstamts.getName((UUID) ....)
 
     
