@@ -7,7 +7,7 @@ All other files in this package are copy pasted from
 https://www.bluetooth.com/specifications/gatt
 
 A few adjustments:
-- and SPACE are translated as _ in the names of the variables
+\- and SPACE are translated as _ in the names of the variables
 
 To use as a maven repository : 
 
