@@ -12,5 +12,14 @@ Package with the Bluetooth LE UUIDS and their equivalent names
     To use as a maven repository : 
     
         implementation 'com.github.pieterhoekstra:BLEConstants:0.0.1'
+        
+   
+   Usage :
+   
+   BLEConstants.getUUID(BLEService.Generic_Access));
+   
+   and: 
+   
+   BLEConstamts.getName((UUID) ....)
 
     
