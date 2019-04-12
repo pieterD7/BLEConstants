@@ -64,4 +64,34 @@ public class BLEConstants {
 
         return str;
     }
+
+    public static String getKey(String name){
+
+        try{
+            String str = "";
+            Object[] serv = { new BLEGAPConstants()};
+            ClassLoader classLoader = BLEConstants.class.getClassLoader();
+
+            for(int c = 0; c < serv.length; c++){
+                Class cls = classLoader.loadClass( serv[c].getClass().getName());
+                Object clsObject = cls.newInstance();
+                Field[] fields = serv[c].getClass().getDeclaredFields();
+
+                for(int d = 0; d < fields.length; d++){
+
+                    if(fields[d].get(clsObject) != null
+                    && fields[d].getName().equals(name.toUpperCase())){
+                        str = fields[d].get(clsObject) + "";
+                        break;
+                    }
+                }
+
+                return str;
+            }
+        }
+        catch (Exception e){
+
+        }
+        return "";
+    }
 }
