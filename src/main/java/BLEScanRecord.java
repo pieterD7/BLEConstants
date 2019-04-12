@@ -1,4 +1,4 @@
-package eu.mediself.ble;
+package eu.mediself.ble.BLEConstants;
 
 import android.bluetooth.le.ScanRecord;
 import android.util.Log;
