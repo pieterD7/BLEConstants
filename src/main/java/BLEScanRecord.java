@@ -11,11 +11,11 @@ public class BLEScanRecord {
 
     String TAG = BLEScanRecord.class.getSimpleName();
 
-    byte[] bytes;
+    private byte[] bytes;
 
-    String hex = "";
+    private String hex = "";
 
-    ArrayList<ADStructure> hdrs;
+    private ArrayList<ADStructure> hdrs;
 
     public class ADStructure{
 
@@ -36,7 +36,7 @@ public class BLEScanRecord {
 
             String code = "GAP_" + hex.substring(0,2);
 
-            this.type = BLEGAPConstants.getKey(code);
+            this.type = BLEConstants.getKey(code);
 
             this.value = hex.substring(2);
 
