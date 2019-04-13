@@ -1,11 +1,7 @@
-package eu.mediself.ble.BLEConstants;
-
-import android.bluetooth.le.ScanRecord;
-import android.util.Log;
-
-import org.apache.commons.codec.binary.Hex;
+package eu.mediself.ble;
 
 import java.util.ArrayList;
+import eu.mediself.ble.BLEConstants.BLEGAPConstants;
 
 /*
 * A BLE scan record starts with ADStructures and is padded with 0x00
@@ -45,7 +41,7 @@ public class BLEScanRecord {
 
             this.value = hex.substring(2);
 
-            Log.v(TAG, type + " " + value);
+
         }
 
         @Override
@@ -57,18 +53,27 @@ public class BLEScanRecord {
         }
     }
 
-    BLEScanRecord(ScanRecord scanRecord){
-        this.bytes = scanRecord.getBytes();
-        this.hex = new String(Hex.encodeHex(scanRecord.getBytes()));
+    BLEScanRecord(byte[] scanRecord){
+        this.bytes = scanRecord;
+
+        this.hex = bytesToHex(this.bytes);
 
         parseADStructures();
+    }
+
+    private String bytesToHex(byte[] bytes){
+        StringBuilder builder = new StringBuilder();
+        for(byte b : bytes){
+            builder.append(String.format("%02x", b));
+        }
+        return builder.toString();
     }
 
     private int getADStructure(int start){
 
         byte[] octet = {this.bytes[start]};
 
-        int len = Integer.parseInt(new String(Hex.encodeHex(octet)), 16);
+        int len = Integer.parseInt(new String(bytesToHex(octet)), 16);
 
         if((start + len) > this.bytes.length - 1) return -1;
 
@@ -80,7 +85,7 @@ public class BLEScanRecord {
         int d = 0;
         for(int c = start + 1; c < start + len + 1; c++){
             byte[] bar = {this.bytes[c]};
-            data += new String(Hex.encodeHex(bar));
+            data += new String(bytesToHex(bar));
         }
 
         ADStructure ad = new ADStructure(data);

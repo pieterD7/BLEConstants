@@ -1,4 +1,4 @@
-﻿package eu.mediself.ble.BLEConstants;
+package eu.mediself.ble.BLEConstants;
 
 import java.lang.reflect.Field;
 
@@ -50,5 +50,35 @@ public class BLEGAPConstants {
     public static final String GAP_2B = "«Mesh Beacon»";
     public static final String GAP_3D = "«3D Information Data»";
     public static final String GAP_FF = "«Manufacturer Specific Data»";
+
+    public static String getKey(String name){
+
+        try{
+            String str = "";
+            Object[] serv = { new BLEGAPConstants()};
+            ClassLoader classLoader = BLEGAPConstants.class.getClassLoader();
+
+            for(int c = 0; c < serv.length; c++){
+                Class cls = classLoader.loadClass( serv[c].getClass().getName());
+                Object clsObject = cls.newInstance();
+                Field[] fields = serv[c].getClass().getDeclaredFields();
+
+                for(int d = 0; d < fields.length; d++){
+
+                    if(fields[d].get(clsObject) != null
+                    && fields[d].getName().equals(name.toUpperCase())){
+                        str = fields[d].get(clsObject) + "";
+                        break;
+                    }
+                }
+
+                return str;
+            }
+        }
+        catch (Exception e){
+
+        }
+        return "";
+    }
 
 }
