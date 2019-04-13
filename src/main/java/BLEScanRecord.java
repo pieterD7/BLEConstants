@@ -1,4 +1,4 @@
-package eu.mediself.ble;
+package eu.mediself.ble.BLEConstants;
 
 import java.util.ArrayList;
 import eu.mediself.ble.BLEConstants.BLEGAPConstants;
