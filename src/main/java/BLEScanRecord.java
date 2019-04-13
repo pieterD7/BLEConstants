@@ -53,7 +53,7 @@ public class BLEScanRecord {
         }
     }
 
-    BLEScanRecord(byte[] scanRecord){
+    public BLEScanRecord(byte[] scanRecord){
         this.bytes = scanRecord;
 
         this.hex = bytesToHex(this.bytes);
