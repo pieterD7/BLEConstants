@@ -1,7 +1,6 @@
 package eu.mediself.ble.BLEConstants;
 
 import java.util.ArrayList;
-import eu.mediself.ble.BLEConstants.BLEGAPConstants;
 
 /*
 * A BLE scan record starts with ADStructures and is padded with 0x00
