@@ -11,7 +11,7 @@ A few adjustments:
 
 To use as a jitpack repository : 
 
-    implementation 'com.github.pieterhoekstra:BLEConstants:0.0.1'
+    implementation 'com.github.pieterhoekstra:BLEConstants:0.1.0'
         
 Usage :   
    
@@ -20,5 +20,9 @@ Usage :
 and: 
    
     String name = BLEConstamts.getName((UUID) ....)
+    
+New in the latest version is the BLEScanRecord class. You can use it like this:
+
+    String scanRecord = new BLEScanRecord((byte[])scanRecordBytes).toString()
 
     
