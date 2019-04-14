@@ -36,7 +36,7 @@ public class BLEScanRecord {
 
             String code = "GAP_" + hex.substring(0,2);
 
-            this.type = BLEConstants.getKey(code);
+            this.type = BLEConstants.getGAPOctet(code);
 
             this.value = hex.substring(2);
 
