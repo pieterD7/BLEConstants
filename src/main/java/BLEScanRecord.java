@@ -22,7 +22,7 @@ public class BLEScanRecord {
         // The type of the ADStructure. This is the first octet;
         String octet = "";
 
-        // Translated type
+        // The translated octet
         String type = "";
 
         // The data
