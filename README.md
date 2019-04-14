@@ -11,7 +11,7 @@ A few adjustments:
 
 To use as a jitpack repository : 
 
-    implementation 'com.github.pieterhoekstra:BLEConstants:0.0.1'
+    implementation 'com.github.pieterhoekstra:BLEConstants:0.1.0'
         
 Usage :   
    
