@@ -65,7 +65,7 @@ public class BLEConstants {
         return str;
     }
 
-    public static String getKey(String name){
+    public static String getGAPOctet(String octet){
 
         try{
             String str = "";
@@ -80,7 +80,7 @@ public class BLEConstants {
                 for(int d = 0; d < fields.length; d++){
 
                     if(fields[d].get(clsObject) != null
-                    && fields[d].getName().equals(name.toUpperCase())){
+                    && fields[d].getName().equals(octet.toUpperCase())){
                         str = fields[d].get(clsObject) + "";
                         break;
                     }
