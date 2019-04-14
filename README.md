@@ -9,7 +9,7 @@ https://www.bluetooth.com/specifications/gatt
 A few adjustments:
 \- and SPACE are translated as _ in the names of the variables
 
-To use as a maven repository : 
+To use as a jitpack repository : 
 
     implementation 'com.github.pieterhoekstra:BLEConstants:0.0.1'
         
