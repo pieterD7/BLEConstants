@@ -20,5 +20,9 @@ Usage :
 and: 
    
     String name = BLEConstamts.getName((UUID) ....)
+    
+New in the latest version is the BLEScanRecord class. You can use it like this:
+
+    String scanRecord = new BLEScanRecord(scanRecordByteArray).toString()
 
     
